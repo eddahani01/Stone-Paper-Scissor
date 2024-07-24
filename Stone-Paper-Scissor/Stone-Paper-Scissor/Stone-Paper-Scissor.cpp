@@ -56,9 +56,6 @@ void GameOverScreen(stGameResults stGameResult) {
 
 }
 
-void ResetScreen() {
-
-}
 
 void StartTheGame() {
 	system("cls");
