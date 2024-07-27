@@ -45,6 +45,16 @@ enGameChoice ReadPlayer1Choice()
 		cout << "\nYour Choice: [1]:Stone, [2]:Paper, [3]:Scissor ? ";
 		cin >> PlayerChoice;
 
+		while (cin.fail())
+		{
+			//user didn't input a number
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+			cout << "Invalid Number, Enter a valid one: " << endl;
+			cin >> PlayerChoice;
+		}
+
 	} while (PlayerChoice < 1 || PlayerChoice >3);
 
 	return (enGameChoice)PlayerChoice;
@@ -206,6 +216,17 @@ short ReadHowManyRounds() {
 	{
 		cout << "How Many Rounds 1 to 10?" << endl;
 		cin >> rounds;
+
+		while (cin.fail())
+		{
+			//user didn't input a number
+			cin.clear();
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+			cout << "Invalid Number, Enter a valid one: " << endl;
+			cin >> rounds;
+		}
+
 	} while (rounds < 1 || rounds > 10);
 
 	return rounds;
